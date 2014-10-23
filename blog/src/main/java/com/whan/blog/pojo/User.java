@@ -1,9 +1,6 @@
 package com.whan.blog.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -31,13 +28,15 @@ public class User implements Serializable {
 
     private String url;
 
-    private String registered;
+    private Date registered;
 
     private String activationKey;
 
     private String status;
 
-    private Date displayName;
+    /*前台显示的名字*/
+    @Column(length = 30)
+    private String displayName;
 
 
 }
